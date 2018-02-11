@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+// This function takes a csv and returns it as slice of interfaces
+// to be inserted in a Google Sheet
 
 func prepare(filename string) [][]interface{} {
 
@@ -22,8 +24,14 @@ func prepare(filename string) [][]interface{} {
 	all := [][]interface{}{}
 
 	for _, value := range record {
-		all = append(all, []interface{}{value[0], value[1]})
-	}
+		row := []interface{}{}
 
+		for _, item := range value {
+			row = append(row, item)
+		}
+
+		all = append(all, row)
+
+	}
 	return all
 }

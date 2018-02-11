@@ -9,7 +9,7 @@ import (
 	"google.golang.org/api/drive/v3"
 )
 
-func create(newFile string) string {
+func create(newFile string, parent string) string {
 	ctx := context.Background()
 
 	b, err := ioutil.ReadFile("client_secret.json")
@@ -32,12 +32,11 @@ func create(newFile string) string {
 
 	// If we are uploading a file rather than creating, we need to add .Media(file)
 	// The returned ID of the file is what we will need to write using the Sheets api
-	driveFile, err := srv.Files.Create(&drive.File{Name: newFile, MimeType: "application/vnd.google-apps.spreadsheet"}).Do()
+	driveFile, err := srv.Files.Create(&drive.File{Name: newFile, MimeType: "application/vnd.google-apps.spreadsheet", Parents: []string{parent}}).Do()
 	if err != nil {
 		log.Fatalf("Unable to create file: %v", err)
 	}
 
-	//log.Printf("file: %+v", driveFile)
 	return driveFile.Id
 
 }

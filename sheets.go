@@ -1,12 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/sheets/v4"
 	"io/ioutil"
 	"log"
-	"fmt"
 )
 
 func writeSS(ssid string, content [][]interface{}) {
