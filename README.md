@@ -10,9 +10,11 @@ Also, this was a learning project for me to learn `Go`, so expect the code to do
 
 # Usage
 
-Clone and compile with `go build`. Then do: 
+Download a binary release or clone and compile with `go build`. Then do: 
 
     csv2gs -file "mysheet.csv" -name "Monthly Report" -parent "id of the targetGoogle Drive folder"
+    
+The first time you run it, you will be prompted to visit a Google URL to authenticate your credentials. You will be given a key that you must paste back into the terminal from where you ran this program. Then you are good to go. 
     
 # Requirements
 
