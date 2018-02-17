@@ -9,6 +9,8 @@ import (
 	"log"
 )
 
+//writeSS takes the converted content from the CSV and writes it to
+//the Google Sheet created by the function create.
 func writeSS(ssid string, content [][]interface{}) {
 
 	ctx := context.Background()

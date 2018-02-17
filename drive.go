@@ -9,6 +9,9 @@ import (
 	"google.golang.org/api/drive/v3"
 )
 
+//create will create a new Google Sheets file into the specified
+//parent folder and give back the ID, so it can be used when writing
+//the sheet.
 func create(newFile string, parent string) string {
 	ctx := context.Background()
 

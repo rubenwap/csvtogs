@@ -1,8 +1,8 @@
 package main
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestCsv(t *testing.T) {
@@ -12,4 +12,3 @@ func TestCsv(t *testing.T) {
 		t.Errorf("Test failed, expected: '%s', got:  '%s'", expected, actual)
 	}
 }
-
