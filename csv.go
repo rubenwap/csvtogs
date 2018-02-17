@@ -8,7 +8,6 @@ import (
 
 // This function takes a csv and returns it as slice of interfaces
 // to be inserted in a Google Sheet
-
 func prepare(filename string) [][]interface{} {
 
 	file, _ := os.Open(filename)
