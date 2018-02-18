@@ -2,7 +2,6 @@
 // and create a Google Sheet with its contents.
 // It is required that the user provides a client_secret.json for their
 // own Google account.
-
 package csvtogs
 
 //Transform executes the pipeline of actions: Create the GSheets document,
